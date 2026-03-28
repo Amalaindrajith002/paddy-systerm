@@ -1,0 +1,14 @@
+<svg width="800" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="800" height="400" fill="#81C784"/>
+<path d="M0 400H140L280 300L350 400H500L640 300L800 400H0" fill="#4CAF50"/>
+<path d="M140 400L280 300L350 400H140" fill="#66BB6A"/>
+<path d="M500 400L640 300L760 400H500" fill="#4CAF50"/>
+<path d="M0 400H140L280 300L350 400H0" fill="#66BB6A"/>
+<circle cx="200" cy="350" r="10" fill="#FFB74D"/>
+<circle cx="300" cy="370" r="8" fill="#FFEB3B"/>
+<circle cx="400" cy="340" r="12" fill="#FFB74D"/>
+<circle cx="500" cy="360" r="9" fill="#FFEB3B"/>
+<circle cx="600" cy="380" r="11" fill="#FFB74D"/>
+<circle cx="700" cy="350" r="10" fill="#FFEB3B"/>
+<text x="400" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" fill="#2E7D32" font-weight="bold">PADDY FIELDS</text>
+</svg>
