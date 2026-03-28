@@ -57,7 +57,7 @@ function FarmersTable() {
 
         seasonDataMap[farmerIdNumber][season].loans += 1;
         seasonDataMap[farmerIdNumber][season].loanAmount +=
-          (loanData.kg || loanData.kilograms || 0) * (loanData.pricePerKg || 0);
+          loanData.amount || 0;
       });
 
       purchasesSnapshot.docs.forEach((doc) => {
@@ -79,7 +79,7 @@ function FarmersTable() {
 
         seasonDataMap[farmerIdNumber][season].purchases += 1;
         seasonDataMap[farmerIdNumber][season].purchaseAmount +=
-          (purchaseData.kg || purchaseData.kilograms || 0) * (purchaseData.pricePerKg || 0);
+          purchaseData.amount || 0;
       });
 
       setSeasonData(seasonDataMap);
@@ -173,7 +173,7 @@ function FarmersTable() {
 
                 if (selectedSeason === "Both") {
                   const totalTransactions = yalaData.loans + yalaData.purchases + mahaData.loans + mahaData.purchases;
-                  const totalValue = yalaData.loanAmount + yalaData.purchaseAmount + mahaData.loanAmount + mahaData.purchaseAmount;
+                  const totalValue = (yalaData.purchaseAmount - yalaData.loanAmount) + (mahaData.purchaseAmount - mahaData.loanAmount);
 
                   return (
                     <tr key={`${farmer.idNumber}-both`}>
@@ -197,7 +197,7 @@ function FarmersTable() {
                 } else {
                   const data = farmerData[selectedSeason];
                   const totalTransactions = data.loans + data.purchases;
-                  const totalValue = data.loanAmount + data.purchaseAmount;
+                  const totalValue = data.purchaseAmount - data.loanAmount;
 
                   return (
                     <tr key={`${farmer.idNumber}-${selectedSeason}`}>
