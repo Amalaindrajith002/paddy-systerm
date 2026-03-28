@@ -42,6 +42,12 @@ function App() {
           {pageComponents[page]}
         </section>
       </main>
+
+      <footer className="app-footer">
+        <div className="creator-info">
+          W A I WEERASOORIYA | 0761722747
+        </div>
+      </footer>
     </div>
   );
 }

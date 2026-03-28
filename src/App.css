@@ -149,6 +149,21 @@ body {
   box-shadow: 0 10px 30px rgba(76, 175, 80, 0.25);
 }
 
+.app-footer {
+  margin-top: auto;
+  padding: 1.5rem 2rem;
+  border-top: 2px solid #c8e6c9;
+  background: linear-gradient(135deg, #f1f8e9, #ffffff);
+}
+
+.creator-info {
+  text-align: right;
+  font-size: 0.9rem;
+  color: #2e7d32;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
 .card h3 {
   margin-top: 0;
   margin-bottom: 15px;
