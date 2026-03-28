@@ -5,6 +5,7 @@ import AddFarmer from "./AddFarmer";
 import AddLoan from "./AddLoan";
 import AddPurchase from "./AddPurchase";
 import Search from "./Search";
+import FarmersTable from "./FarmersTable";
 
 function App() {
   const [page, setPage] = useState("dashboard");
@@ -15,6 +16,7 @@ function App() {
     addLoan: <AddLoan />,
     addPurchase: <AddPurchase />,
     search: <Search />,
+    farmersTable: <FarmersTable />,
   };
 
   return (
@@ -32,6 +34,7 @@ function App() {
         <button className={page === "addLoan" ? "active" : ""} onClick={() => setPage("addLoan")}>Add Loan</button>
         <button className={page === "addPurchase" ? "active" : ""} onClick={() => setPage("addPurchase")}>Add Purchase</button>
         <button className={page === "search" ? "active" : ""} onClick={() => setPage("search")}>Search</button>
+        <button className={page === "farmersTable" ? "active" : ""} onClick={() => setPage("farmersTable")}>Farmers Table</button>
       </nav>
 
       <main className="app-container">
