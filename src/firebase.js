@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDOkvUVIeIpLPVs8Dof4J6WSt_Ws_zlldE",
@@ -15,18 +16,21 @@ console.log("Initializing Firebase with config:", firebaseConfig);
 
 let app;
 let db;
+let auth;
 
 try {
   app = initializeApp(firebaseConfig);
   console.log("Firebase app initialized:", app);
   db = getFirestore(app);
   console.log("Firestore db initialized:", db);
+  auth = getAuth(app);
+  console.log("Firebase auth initialized:", auth);
 } catch (e) {
   console.error("Firebase initialization error:", e);
   throw e;
 }
 
-export { db };
+export { db, auth };
 
 // optional Health-check helper
 export async function checkFirestoreConnection() {
