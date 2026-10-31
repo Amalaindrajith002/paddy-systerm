@@ -12,19 +12,14 @@ const firebaseConfig = {
   measurementId: "G-2N4YTMMK80",
 };
 
-console.log("Initializing Firebase with config:", firebaseConfig);
-
 let app;
 let db;
 let auth;
 
 try {
   app = initializeApp(firebaseConfig);
-  console.log("Firebase app initialized:", app);
   db = getFirestore(app);
-  console.log("Firestore db initialized:", db);
   auth = getAuth(app);
-  console.log("Firebase auth initialized:", auth);
 } catch (e) {
   console.error("Firebase initialization error:", e);
   throw e;
