@@ -39,3 +39,9 @@ To enable deployment:
 The site URL is `https://Amalaindrajith002.github.io/paddy-systerm/`.
 
 The workflow does not need Firebase credentials or secrets to build and publish this static application. Firebase web-app configuration is consumed by the client application; protect application data with appropriate Firebase Authentication settings, API-key restrictions, and Firestore Security Rules. Do not put private credentials or service-account keys in the repository or Pages workflow.
+
+## Admin access
+
+The application requires Firebase Authentication to open the management pages. Public registration is not offered in the application; create admin accounts in Firebase Console under **Authentication → Users**. The login page still supports password resets.
+
+The login screen is not a substitute for database access control. Configure Firestore Security Rules in Firebase Console to allow reads and writes only for approved admin accounts. GitHub Pages serves static files publicly, so never rely on hiding the frontend to secure Firestore data.

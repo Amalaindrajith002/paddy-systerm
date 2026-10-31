@@ -3,7 +3,7 @@ import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/aut
 import { auth } from './firebase';
 import './Login.css'; // We'll create this CSS file
 
-function Login({ onLogin, onSwitchToRegister }) {
+function Login({ onLogin }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -91,10 +91,6 @@ function Login({ onLogin, onSwitchToRegister }) {
         <div className="auth-links">
           <button onClick={() => setShowResetForm(true)} className="link-button">
             Forgot Password?
-          </button>
-          <span className="divider">|</span>
-          <button onClick={onSwitchToRegister} className="link-button">
-            Register
           </button>
         </div>
       </div>

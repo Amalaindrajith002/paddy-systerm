@@ -8,14 +8,12 @@ import AddPurchase from "./AddPurchase";
 import Search from "./Search";
 import FarmersTable from "./FarmersTable";
 import Login from "./Login";
-import Registration from "./Registration";
 import { auth } from "./firebase";
 
 function App() {
   const [page, setPage] = useState("dashboard");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [showRegistration, setShowRegistration] = useState(false);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -30,21 +28,9 @@ function App() {
     setIsLoggedIn(true);
   };
 
-  const handleRegister = () => {
-    setIsLoggedIn(true);
-  };
-
   const handleLogout = () => {
     auth.signOut();
     setIsLoggedIn(false);
-  };
-
-  const switchToRegistration = () => {
-    setShowRegistration(true);
-  };
-
-  const switchToLogin = () => {
-    setShowRegistration(false);
   };
 
   if (loading) {
@@ -52,11 +38,7 @@ function App() {
   }
 
   if (!isLoggedIn) {
-    if (showRegistration) {
-      return <Registration onRegister={handleRegister} onSwitchToLogin={switchToLogin} />;
-    } else {
-      return <Login onLogin={handleLogin} onSwitchToRegister={switchToRegistration} />;
-    }
+    return <Login onLogin={handleLogin} />;
   }
 
   const pageComponents = {
